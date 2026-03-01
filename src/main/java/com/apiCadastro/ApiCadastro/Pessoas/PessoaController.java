@@ -1,4 +1,4 @@
-package com.apiCadastro.ApiCadastro.Pessoas.Controller.Service;
+package com.apiCadastro.ApiCadastro.Pessoas;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

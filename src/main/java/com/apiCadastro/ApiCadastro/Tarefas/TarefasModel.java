@@ -1,6 +1,6 @@
 package com.apiCadastro.ApiCadastro.Tarefas;
 
-import com.apiCadastro.ApiCadastro.Pessoas.Controller.Service.PessoaModel;
+import com.apiCadastro.ApiCadastro.Pessoas.PessoaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

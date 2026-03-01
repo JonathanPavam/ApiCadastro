@@ -1,4 +1,4 @@
-package com.apiCadastro.ApiCadastro.Pessoas.Controller.Service;
+package com.apiCadastro.ApiCadastro.Pessoas;
 
 import com.apiCadastro.ApiCadastro.Tarefas.TarefasModel;
 import jakarta.persistence.*;
@@ -17,13 +17,17 @@ public class PessoaModel
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @Column(name = "nome")
     private String nome;
 
     @Column(unique = true)
     private String email;
 
+    @Column(name = "idade")
     private int idade;
+
+    @Column(name = "url_imagem")
+    private String imagemUrl;
 
     @ManyToOne
     @JoinColumn(name = "tarefa_id")
