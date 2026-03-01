@@ -2,14 +2,20 @@ package com.apiCadastro.ApiCadastro.Tarefas;
 
 import com.apiCadastro.ApiCadastro.Pessoas.Controller.Service.PessoaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 
 @Entity
 @Table(name = "tb_tarefas")
-public class TarefasModel{
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class TarefasModel
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,5 +23,4 @@ public class TarefasModel{
     private String dificuldade;
     @OneToMany(mappedBy = "tarefa")
     private List<PessoaModel> pessoa;
-
 }
