@@ -7,7 +7,3 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ApiCadastroApplication
 {
 	public static void main(String[] args) {
-		SpringApplication.run(ApiCadastroApplication.class, args);
-	}
-
-}
