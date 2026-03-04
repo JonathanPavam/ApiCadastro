@@ -1,0 +1,46 @@
+2026-03-03 21:43:51.705125-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_TAREFAS(ID, DIFICULDADE, NOME)\000d\000aVALUES(1, 'OK'. [*]'LAVAR A LOUCA')"; expected "identifier"; SQL statement:
+INSERT INTO TB_TAREFAS(ID, DIFICULDADE, NOME)
+VALUES(1, 'OK'. 'LAVAR A LOUCA') [42001-240]
+2026-03-03 21:44:08.339150-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_TAREFAS(ID, DIFICULDADE, NOME)\000d\000aVALUES(1, 'OK'. [*]'LAVAR A LOUCA')"; expected "identifier"; SQL statement:
+INSERT INTO TB_TAREFAS(ID, DIFICULDADE, NOME)
+VALUES(1, 'OK'. 'LAVAR A LOUCA') [42001-240]
+2026-03-03 21:44:09.033568-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_TAREFAS(ID, DIFICULDADE, NOME)\000d\000aVALUES(1, 'OK'. [*]'LAVAR A LOUCA')"; expected "identifier"; SQL statement:
+INSERT INTO TB_TAREFAS(ID, DIFICULDADE, NOME)
+VALUES(1, 'OK'. 'LAVAR A LOUCA') [42001-240]
+2026-03-03 21:44:09.391552-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_TAREFAS(ID, DIFICULDADE, NOME)\000d\000aVALUES(1, 'OK'. [*]'LAVAR A LOUCA')"; expected "identifier"; SQL statement:
+INSERT INTO TB_TAREFAS(ID, DIFICULDADE, NOME)
+VALUES(1, 'OK'. 'LAVAR A LOUCA') [42001-240]
+2026-03-03 21:44:09.570871-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_TAREFAS(ID, DIFICULDADE, NOME)\000d\000aVALUES(1, 'OK'. [*]'LAVAR A LOUCA')"; expected "identifier"; SQL statement:
+INSERT INTO TB_TAREFAS(ID, DIFICULDADE, NOME)
+VALUES(1, 'OK'. 'LAVAR A LOUCA') [42001-240]
+2026-03-03 21:44:39.022343-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_TAREFAS (DIFICULDADE, NOME)\000d\000aVALUES('OK'. [*]'LAVAR A LOUCA')"; expected "identifier"; SQL statement:
+INSERT INTO TB_TAREFAS (DIFICULDADE, NOME)
+VALUES('OK'. 'LAVAR A LOUCA') [42001-240]
+2026-03-03 21:44:54.639562-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_TAREFAS (DIFICULDADE, NOME)\000d\000aVALUES('OK'. [*]'LAVAR A LOUCA')"; expected "identifier"; SQL statement:
+INSERT INTO TB_TAREFAS (DIFICULDADE, NOME)
+VALUES('OK'. 'LAVAR A LOUCA') [42001-240]
+2026-03-03 21:44:55.821455-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_TAREFAS (DIFICULDADE, NOME)\000d\000aVALUES('OK'. [*]'LAVAR A LOUCA')"; expected "identifier"; SQL statement:
+INSERT INTO TB_TAREFAS (DIFICULDADE, NOME)
+VALUES('OK'. 'LAVAR A LOUCA') [42001-240]
+2026-03-03 21:44:56.288972-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_TAREFAS (DIFICULDADE, NOME)\000d\000aVALUES('OK'. [*]'LAVAR A LOUCA')"; expected "identifier"; SQL statement:
+INSERT INTO TB_TAREFAS (DIFICULDADE, NOME)
+VALUES('OK'. 'LAVAR A LOUCA') [42001-240]
+2026-03-03 21:44:56.542789-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TB_TAREFAS (DIFICULDADE, NOME)\000d\000aVALUES('OK'. [*]'LAVAR A LOUCA')"; expected "identifier"; SQL statement:
+INSERT INTO TB_TAREFAS (DIFICULDADE, NOME)
+VALUES('OK'. 'LAVAR A LOUCA') [42001-240]
+2026-03-03 21:45:15.592285-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]TB_TAREFAS"; expected "TRUNCATE"; SQL statement:
+TB_TAREFAS [42001-240]
+2026-03-03 22:06:38.541321-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]""flyway_schema_history"""; SQL statement:
+"flyway_schema_history" [42000-240]
