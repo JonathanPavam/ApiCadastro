@@ -19,10 +19,10 @@ public class PessoaController
     }
 
     //Adicionar Pessoa
-    @PostMapping("/createPessoas")
-    public String createPessoa()
+    @PostMapping("/criar")
+    public PessoaModel criarPessoa(@RequestBody PessoaModel pessoa)
     {
-        return "Criado com sucesso";
+        return pessoaService.criarPessoa(pessoa);
     }
 
     //Listar
@@ -40,16 +40,21 @@ public class PessoaController
     }
 
     //Alterar dados
-    @PutMapping
-    public String alterarPessoa()
+    @PutMapping("/att/{id}")
+    public String alterarPessoa(@PathVariable Long id, @RequestBody PessoaModel pessoa)
     {
-        return "Alterado";
+        pessoaService.alterarPessoa(pessoa, id);
+        return "Alteracao feita";
     }
 
     //Deletar
-    @DeleteMapping("/deletarId")
-    public String deletarPessoa()
+    @DeleteMapping("/deletarId/{id}")
+    public void deletarPessoa(@PathVariable Long id)
     {
-        return "Pessoa deletada";
+        pessoaService.deletarpPessoa(id);
     }
+
+
+
+
 }
