@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 @Service
 public class PessoaService
@@ -18,6 +20,12 @@ public class PessoaService
     public List <PessoaModel> listarTodasPessoas()
     {
         return pessoaRepository.findAll();
+    }
+
+    public PessoaModel listarPessoasId(Long id)
+    {
+        Optional<PessoaModel> pessoaId = pessoaRepository.findById(id);
+        return pessoaId.orElse(null);
     }
 
 

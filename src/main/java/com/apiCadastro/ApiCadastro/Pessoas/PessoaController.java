@@ -25,7 +25,7 @@ public class PessoaController
         return "Criado com sucesso";
     }
 
-    //Procurar pessoa - por id
+    //Listar
     @GetMapping("/listar")
     public List<PessoaModel> getAllPessoas()
     {
@@ -33,10 +33,10 @@ public class PessoaController
     }
 
     //Listar pessoas
-    @GetMapping("getPessoasId")
-    public String getPessoaId()
+    @GetMapping("/listar/{id}")
+    public PessoaModel getPessoaId(@PathVariable Long id)
     {
-        return "Busca por ID";
+        return pessoaService.listarPessoasId(id);
     }
 
     //Alterar dados
