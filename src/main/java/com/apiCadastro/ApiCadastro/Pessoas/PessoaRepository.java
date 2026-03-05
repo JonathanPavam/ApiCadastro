@@ -1,4 +1,8 @@
 package com.apiCadastro.ApiCadastro.Pessoas;
 
-public class PessoaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PessoaRepository extends JpaRepository<PessoaModel, Long>
+{
+
 }
