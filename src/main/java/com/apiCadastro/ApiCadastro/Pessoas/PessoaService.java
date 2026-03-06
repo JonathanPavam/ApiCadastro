@@ -14,6 +14,7 @@ import java.util.OptionalInt;
 @Service
 public class PessoaService
 {
+    private PessoaMapper pessoaMapper;
     private PessoaRepository pessoaRepository;
 
     public PessoaService(PessoaRepository pessoaRepository) {
@@ -21,7 +22,7 @@ public class PessoaService
     }
 
     //Listar pessoas
-    public List <PessoaModel> listarTodasPessoas()
+    public List <PessoaDto> listarTodasPessoas()
     {
         return pessoaRepository.findAll();
     }
@@ -35,9 +36,11 @@ public class PessoaService
 
     //
     //Add Pessoa
-    public PessoaModel criarPessoa(PessoaModel pessoa)
+    public PessoaDto criarPessoa(PessoaDto pessoaDto)
     {
-        return pessoaRepository.save(pessoa);
+         PessoaModel pessoa = new pessoaMapper.map(pessoaDto);
+         pessoa =pessoaRepository.save(pessoa);
+         return pessoaMapper.map(pessoa);
     }
 
     //

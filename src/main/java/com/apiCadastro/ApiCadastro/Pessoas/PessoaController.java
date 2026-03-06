@@ -20,14 +20,14 @@ public class PessoaController
 
     //Adicionar Pessoa
     @PostMapping("/criar")
-    public PessoaModel criarPessoa(@RequestBody PessoaModel pessoa)
+    public PessoaDto criarPessoa(@RequestBody PessoaDto pessoa)
     {
         return pessoaService.criarPessoa(pessoa);
     }
 
     //Listar
     @GetMapping("/listar")
-    public List<PessoaModel> getAllPessoas()
+    public List<PessoaDto> getAllPessoas()
     {
         return pessoaService.listarTodasPessoas();
     }
