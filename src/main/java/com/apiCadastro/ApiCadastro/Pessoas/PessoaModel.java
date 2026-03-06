@@ -33,5 +33,7 @@ public class PessoaModel
     @JoinColumn(name = "tarefa_id")
     private TarefasModel tarefa;
 
+    @Column(name = "relevancia")
+    private String relevancia;
 
 }
