@@ -12,8 +12,11 @@ import java.util.OptionalInt;
 @Service
 public class TarefasService
 {
+    private final PessoaRepository pessoaRepository;
     TarefasRepository tarefasRepository;
-    public TarefasService(TarefasRepository tarefasRepository) {this.tarefasRepository = tarefasRepository;}
+    public TarefasService(TarefasRepository tarefasRepository, PessoaRepository pessoaRepository) {this.tarefasRepository = tarefasRepository;
+        this.pessoaRepository = pessoaRepository;
+    }
 
     //Listar
     public List<TarefasModel> listarTarefas()
@@ -37,10 +40,14 @@ public class TarefasService
 
 
     //Atualizar
-    public String atualizarTarefa(Long id, TarefasModel tarefa)
+    public TarefasModel atualizarTarefa(Long id, TarefasModel tarefa)
     {
-        TarefasModel tarefaNew = atualizarTarefa.save(tarefa);
-        return "Tarefa atualizada";
+        if(tarefasRepository.existsById(id))
+        {
+            tarefa.setId(id);
+            return tarefasRepository.save(tarefa);
+        }
+        return null;
     }
 
     //Deletar

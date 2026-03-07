@@ -39,7 +39,7 @@ public class TarefasController
     }
 
     //Deletar
-    @DeleteMapping
+    @DeleteMapping("/deletar/{id}")
     public void deletarTarefa(@PathVariable Long id)
     {
         tarefasService.deletarTarefa(id);

@@ -10,34 +10,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
+import java.util.stream.Collectors;
 
 @Service
 public class PessoaService
 {
+    private PessoaMapper pessoaMapper;
     private PessoaRepository pessoaRepository;
 
-    public PessoaService(PessoaRepository pessoaRepository) {
+    public PessoaService(PessoaRepository pessoaRepository, PessoaMapper pessoaMapper) {
         this.pessoaRepository = pessoaRepository;
+        this.pessoaMapper = pessoaMapper;
     }
 
     //Listar pessoas
-    public List <PessoaModel> listarTodasPessoas()
+    public List <PessoaDto> listarTodasPessoas()
     {
-        return pessoaRepository.findAll();
+        List<PessoaModel> pessoas = pessoaRepository.findAll();
+        return pessoas.stream()
+        .map(pessoaMapper::map)
+                .collect(Collectors.toList());
     }
 
     //Por id
-    public PessoaModel listarPessoasId(Long id)
+    public PessoaDto listarPessoasId(Long id)
     {
-        Optional<PessoaModel> pessoaId = pessoaRepository.findById(id);
-        return pessoaId.orElse(null);
+        Optional<PessoaModel> pessoa = pessoaRepository.findById(id);
+        return pessoa.map(pessoaMapper::map).orElse(null);
     }
 
     //
     //Add Pessoa
-    public PessoaModel criarPessoa(PessoaModel pessoa)
+    public PessoaDto criarPessoa(PessoaDto pessoaDto)
     {
-        return pessoaRepository.save(pessoa);
+         PessoaModel pessoa = pessoaMapper.map(pessoaDto);
+         pessoa = pessoaRepository.save(pessoa);
+         return pessoaMapper.map(pessoa);
     }
 
     //
@@ -51,10 +59,17 @@ public class PessoaService
     //
      // Alterar dados
     @PutMapping
-    public String alterarPessoa(PessoaModel pessoa, Long id)
+    public PessoaDto alterarPessoa(PessoaDto pessoa, Long id)
     {
-        PessoaModel pessoaModel = pessoaRepository.save(pessoa);
-        return "Atualizado";
+        Optional<PessoaModel> pessoaId = pessoaRepository.findById(id);
+        if(pessoaId.isPresent())
+        {
+            PessoaModel pessoaAtt = pessoaMapper.map(pessoa);
+            pessoaAtt.setId(id);
+            PessoaModel pessoaSalva = pessoaRepository.save(pessoaAtt);
+            return pessoaMapper.map(pessoaSalva);
+        }
+        return null;
     }
 
 
