@@ -34,27 +34,22 @@ public class PessoaController
 
     //Listar pessoas
     @GetMapping("/listar/{id}")
-    public PessoaModel getPessoaId(@PathVariable Long id)
+    public PessoaDto getPessoaId(@PathVariable Long id)
     {
         return pessoaService.listarPessoasId(id);
     }
 
     //Alterar dados
     @PutMapping("/att/{id}")
-    public String alterarPessoa(@PathVariable Long id, @RequestBody PessoaModel pessoa)
+    public PessoaDto alterarPessoa(@PathVariable Long id, @RequestBody PessoaDto pessoa)
     {
-        pessoaService.alterarPessoa(pessoa, id);
-        return "Alteracao feita";
+        return  pessoaService.alterarPessoa(pessoa, id);
     }
 
     //Deletar
-    @DeleteMapping("/deletarId/{id}")
+    @DeleteMapping("/deletar/{id}")
     public void deletarPessoa(@PathVariable Long id)
     {
         pessoaService.deletarpPessoa(id);
     }
-
-
-
-
 }
