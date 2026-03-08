@@ -58,7 +58,7 @@ public class PessoaService
 
     //
      // Alterar dados
-    @PutMapping
+
     public PessoaDto alterarPessoa(PessoaDto pessoa, Long id)
     {
         Optional<PessoaModel> pessoaId = pessoaRepository.findById(id);
